@@ -23,3 +23,5 @@ Route::apiResource('post','\App\Http\Controllers\PostController');
 Route::get('postByCategory/{id}','\App\Http\Controllers\PostController@postByCategory');
 
 Route::get('postforteen/{min?}','\App\Http\Controllers\PostController@postforteen');
+Route::get('lastsquerys/{id}','\App\Http\Controllers\PostController@lastsquerys');
+

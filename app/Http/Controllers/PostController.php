@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -94,6 +95,16 @@ class PostController extends Controller
         $max=$min+5;
         $posts = Post::Where('id','<=',$max)
         ->Where('id','>',$min)
+        ->get();
+
+        return response()->json(['posts'=>$posts]);
+    }
+
+    // ultimos post modificados
+    public function lastsquerys($id){
+        $posts = Post::where('category_id',$id)
+        ->orderBy('id', 'desc')
+        ->take(3)
         ->get();
 
         return response()->json(['posts'=>$posts]);
