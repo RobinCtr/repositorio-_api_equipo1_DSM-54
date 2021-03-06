@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+//Routes category
+Route::apiResource('category','\App\Http\Controllers\categoryController');
+//post
+Route::apiResource('post','\App\Http\Controllers\PostController');
