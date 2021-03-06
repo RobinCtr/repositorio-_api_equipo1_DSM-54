@@ -19,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::apiResource('category','\App\Http\Controllers\categoryController');
 //post
 Route::apiResource('post','\App\Http\Controllers\PostController');
+
+Route::get('postByCategory/{id}','\App\Http\Controllers\PostController@postByCategory');
+

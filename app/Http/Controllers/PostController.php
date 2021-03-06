@@ -85,4 +85,10 @@ class PostController extends Controller
     {
         //
     }
+    public function postByCategory($id) {
+        $posts = Post::Where('category_id',$id)->get();
+
+        return response()->json(['posts'=>$posts]);
+    }
+
 }
