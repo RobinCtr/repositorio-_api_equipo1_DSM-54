@@ -90,5 +90,12 @@ class PostController extends Controller
 
         return response()->json(['posts'=>$posts]);
     }
+    public function postforteen($min) {
+        $max=$min+5;
+        $posts = Post::Where('id','<=',$max)
+        ->Where('id','>',$nim)
+        ->get();
 
+        return response()->json(['posts'=>$posts]);
+    }
 }
